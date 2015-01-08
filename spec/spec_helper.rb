@@ -13,6 +13,14 @@ Capybara.register_driver :selenium do |app|
   driver
 end
 
+if ENV['HEADLESS']
+  require 'headless'
+  headless = Headless.new
+  headless.start
+  at_exit do
+    headless.destroy
+  end
+end
 
 Capybara.configure do |c|
   c.default_driver = :selenium
