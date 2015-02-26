@@ -2,10 +2,11 @@ require 'capybara/rspec'
 require 'rspec/expectations'
 require 'singleton'
 
-Dir[File.dirname(__FILE__) + '/../lib/pages/*.rb'].each {|file| require file }
-Dir[File.dirname(__FILE__) + '/../lib/page_objects/*.rb'].each {|file| require file }
-Dir[File.dirname(__FILE__) + '/../lib/page_uis/*.rb'].each {|file| require file }
+# Dir[File.dirname(__FILE__) + '/../lib/pages/*.rb'].each {|file| require file }
+# Dir[File.dirname(__FILE__) + '/../lib/page_objects/*.rb'].each {|file| require file }
+# Dir[File.dirname(__FILE__) + '/../lib/page_uis/*.rb'].each {|file| require file }
 
+Dir[File.dirname(__FILE__) + '/../lib/pages_workshop/*.rb'].each {|file| require file }
 
 Capybara.register_driver :selenium do |app|
   driver = Capybara::Selenium::Driver.new(app, :browser => :firefox)
@@ -31,7 +32,10 @@ end
 RSpec.configure do |config|
 
   config.before(:all) do
+    @sign_in_page = SignInPage.new
     @home_page = HomePage.new
+    @items_selected_page = ItemsSelectedPage.new
+    @search_results_page = SearchResultsPage.new
   end
 
 end
