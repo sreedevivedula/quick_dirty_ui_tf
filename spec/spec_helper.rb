@@ -35,7 +35,7 @@ RSpec.configure do |config|
     @sign_in_page = SignInPage.new
     @home_page = HomePage.new
     @items_selected_page = ItemsSelectedPage.new
-    @search_results_page = SearchResultsPage.new
+    @search_results = SearchResults.new
   end
 
 end
