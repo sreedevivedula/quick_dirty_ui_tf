@@ -8,8 +8,4 @@ class BasePage
     visit '/'
   end
 
-  def ui
-    @ui
-  end
-
 end
