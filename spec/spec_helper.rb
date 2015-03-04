@@ -6,7 +6,7 @@ require 'singleton'
 # Dir[File.dirname(__FILE__) + '/../lib/page_objects/*.rb'].each {|file| require file }
 # Dir[File.dirname(__FILE__) + '/../lib/page_uis/*.rb'].each {|file| require file }
 
-Dir[File.dirname(__FILE__) + '/../lib/pages_workshop/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/../lib/pages/*.rb'].each {|file| require file }
 
 Capybara.register_driver :selenium do |app|
   driver = Capybara::Selenium::Driver.new(app, :browser => :firefox)

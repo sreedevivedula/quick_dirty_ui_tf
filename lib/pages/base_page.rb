@@ -4,7 +4,7 @@ class BasePage
 
   include Capybara::DSL
 
-  def initialize
+  def open_app
     visit '/'
   end
 
