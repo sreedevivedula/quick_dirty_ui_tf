@@ -8,8 +8,4 @@ class HomePage < BasePage
     @header = Header.new
   end
 
-  def header
-    @header
-  end
-
 end

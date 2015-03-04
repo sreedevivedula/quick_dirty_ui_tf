@@ -8,4 +8,8 @@ class BasePage
     visit '/'
   end
 
+  def header
+    @header
+  end
+
 end

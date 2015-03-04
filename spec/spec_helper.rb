@@ -9,7 +9,7 @@ require 'singleton'
 Dir[File.dirname(__FILE__) + '/../lib/pages/*.rb'].each {|file| require file }
 
 Capybara.register_driver :selenium do |app|
-  driver = Capybara::Selenium::Driver.new(app, :browser => :firefox)
+  driver = Capybara::Selenium::Driver.new(app, :browser => :chrome)
   driver.browser.manage.window.resize_to(1600, 1200)
   driver
 end
